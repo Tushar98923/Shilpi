@@ -1,0 +1,5 @@
+# Evaluation and test scripts (the add-on itself needs nothing: it runs inside Blender)
+python-dotenv>=1.0
+# Optional: run the speech server by hand (scripts/start_asr_server.ps1); the add-on installs these itself
+faster-whisper>=1.2
+sounddevice>=0.5

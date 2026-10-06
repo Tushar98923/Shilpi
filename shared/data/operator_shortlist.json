@@ -1,0 +1,2291 @@
+{
+ "operators": {
+  "mesh.primitive_cube_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "size": 2.0,
+    "location": [
+     0.0,
+     0.0,
+     2.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_uv_sphere_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "radius": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_ico_sphere_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "subdivisions": 2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_cylinder_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "vertices": 16,
+    "depth": 2.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_cone_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "radius1": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_torus_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "major_radius": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_plane_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "size": 4.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_circle_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "vertices": 32
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_grid_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "x_subdivisions": 10,
+    "y_subdivisions": 10
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.primitive_monkey_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.primitive_bezier_curve_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.primitive_bezier_circle_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "radius": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.primitive_nurbs_curve_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.primitive_nurbs_circle_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.primitive_nurbs_path_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.empty_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "type": "PLAIN_AXES"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.light_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "type": "SUN"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.camera_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "location": [
+     0.0,
+     -8.0,
+     2.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.text_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.armature_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.metaball_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "type": "BALL"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.speaker_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.lightprobe_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "type": "SPHERE"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.volume_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.effector_add": {
+   "group": "add",
+   "setup": "object",
+   "args": {
+    "type": "WIND"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.delete": {
+   "group": "object",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.duplicate_move": {
+   "group": "object",
+   "setup": "object",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      2.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.duplicate_move_linked": {
+   "group": "object",
+   "setup": "object",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      0.0,
+      2.0,
+      0.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.join": {
+   "group": "object",
+   "setup": "object_two",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_all": {
+   "group": "select",
+   "setup": "object",
+   "args": {
+    "action": "SELECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_by_type": {
+   "group": "select",
+   "setup": "object",
+   "args": {
+    "type": "LIGHT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_random": {
+   "group": "select",
+   "setup": "object",
+   "args": {
+    "ratio": 0.5,
+    "seed": 3
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_pattern": {
+   "group": "select",
+   "setup": "object",
+   "args": {
+    "pattern": "Sph*"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_camera": {
+   "group": "select",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_hierarchy": {
+   "group": "select",
+   "setup": "object_parented",
+   "args": {
+    "direction": "CHILD"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.select_grouped": {
+   "group": "select",
+   "setup": "object_parented",
+   "args": {
+    "type": "CHILDREN_RECURSIVE"
+   },
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "transform.translate": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "value": [
+     2.0,
+     0.0,
+     0.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.rotate": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "value": 0.7854,
+    "orient_axis": "Z"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.resize": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "value": [
+     2.0,
+     2.0,
+     2.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.mirror": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "constraint_axis": [
+     true,
+     false,
+     false
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.location_clear": {
+   "group": "transform",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.rotation_clear": {
+   "group": "transform",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.scale_clear": {
+   "group": "transform",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.origin_set": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "type": "ORIGIN_CURSOR"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.transform_apply": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "location": false,
+    "rotation": true,
+    "scale": true
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.randomize_transform": {
+   "group": "transform",
+   "setup": "object",
+   "args": {
+    "loc": [
+     1.0,
+     1.0,
+     0.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.align": {
+   "group": "transform",
+   "setup": "object_two",
+   "args": {
+    "align_axis": [
+     "X"
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.parent_set": {
+   "group": "relations",
+   "setup": "object_two",
+   "args": {
+    "type": "OBJECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.parent_no_inverse_set": {
+   "group": "relations",
+   "setup": "object_two",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.parent_clear": {
+   "group": "relations",
+   "setup": "object_child",
+   "args": {
+    "type": "CLEAR"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.track_set": {
+   "group": "relations",
+   "setup": "object_two",
+   "args": {
+    "type": "TRACKTO"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.track_clear": {
+   "group": "relations",
+   "setup": "object_constraint",
+   "args": {
+    "type": "CLEAR"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.make_links_data": {
+   "group": "relations",
+   "setup": "object_material",
+   "args": {
+    "type": "MATERIAL"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.make_single_user": {
+   "group": "relations",
+   "setup": "object_linked",
+   "args": {
+    "object": true,
+    "obdata": true
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.shade_smooth": {
+   "group": "shading",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.shade_flat": {
+   "group": "shading",
+   "setup": "object_smooth",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.shade_auto_smooth": {
+   "group": "shading",
+   "setup": "object",
+   "args": {
+    "angle": 0.5236
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.shade_smooth_by_angle": {
+   "group": "shading",
+   "setup": "object",
+   "args": {
+    "angle": 0.5236
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifier_add": {
+   "group": "modifiers",
+   "setup": "object",
+   "args": {
+    "type": "BEVEL"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifier_apply": {
+   "group": "modifiers",
+   "setup": "object_modifiers",
+   "args": {
+    "modifier": "Bevel"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifier_remove": {
+   "group": "modifiers",
+   "setup": "object_modifiers",
+   "args": {
+    "modifier": "Bevel"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifier_move_up": {
+   "group": "modifiers",
+   "setup": "object_modifiers",
+   "args": {
+    "modifier": "Subdivision"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifier_move_down": {
+   "group": "modifiers",
+   "setup": "object_modifiers",
+   "args": {
+    "modifier": "Bevel"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifier_copy": {
+   "group": "modifiers",
+   "setup": "object_modifiers",
+   "args": {
+    "modifier": "Bevel"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.modifiers_clear": {
+   "group": "modifiers",
+   "setup": "object_modifiers",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.subdivision_set": {
+   "group": "modifiers",
+   "setup": "object",
+   "args": {
+    "level": 2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.convert": {
+   "group": "convert",
+   "setup": "object_curve",
+   "args": {
+    "target": "MESH"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.voxel_remesh": {
+   "group": "convert",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.mode_set": {
+   "group": "modes",
+   "setup": "object",
+   "args": {
+    "mode": "EDIT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.editmode_toggle": {
+   "group": "modes",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.posemode_toggle": {
+   "group": "modes",
+   "setup": "object_armature",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "sculpt.sculptmode_toggle": {
+   "group": "modes",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "paint.weight_paint_toggle": {
+   "group": "modes",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "paint.vertex_paint_toggle": {
+   "group": "modes",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "paint.texture_paint_toggle": {
+   "group": "modes",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "bai.collection": {
+   "group": "collections",
+   "setup": "object_two",
+   "args": {
+    "name": "Props"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "material.new": {
+   "group": "materials",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.material_slot_add": {
+   "group": "materials",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.material_slot_remove": {
+   "group": "materials",
+   "setup": "object_material",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.material_slot_remove_unused": {
+   "group": "materials",
+   "setup": "object_material",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.vertex_group_add": {
+   "group": "data",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.vertex_group_assign_new": {
+   "group": "data",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.shape_key_add": {
+   "group": "data",
+   "setup": "object",
+   "args": {
+    "from_mix": false
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.uv_texture_add": {
+   "group": "data",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.uv_texture_remove": {
+   "group": "data",
+   "setup": "object_uv",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "geometry.color_attribute_add": {
+   "group": "data",
+   "setup": "object",
+   "args": {
+    "name": "Color"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "rigidbody.object_add": {
+   "group": "physics",
+   "setup": "object",
+   "args": {
+    "type": "ACTIVE"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "rigidbody.objects_add": {
+   "group": "physics",
+   "setup": "object_two",
+   "args": {
+    "type": "PASSIVE"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "rigidbody.object_remove": {
+   "group": "physics",
+   "setup": "object_physics",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "rigidbody.world_add": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.particle_system_add": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.particle_system_remove": {
+   "group": "physics",
+   "setup": "object_physics",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.forcefield_toggle": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.quick_smoke": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.quick_liquid": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.quick_fur": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.quick_explode": {
+   "group": "physics",
+   "setup": "object",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.constraint_add": {
+   "group": "constraints",
+   "setup": "object",
+   "args": {
+    "type": "COPY_LOCATION"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "object.constraints_clear": {
+   "group": "constraints",
+   "setup": "object_constraint",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "constraint.delete": {
+   "group": "constraints",
+   "setup": "object_constraint",
+   "args": {
+    "constraint": "Track To",
+    "owner": "OBJECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "constraint.apply": {
+   "group": "constraints",
+   "setup": "object_constraint",
+   "args": {
+    "constraint": "Track To",
+    "owner": "OBJECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_all": {
+   "group": "mesh_select",
+   "setup": "mesh_edit",
+   "args": {
+    "action": "DESELECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_mode": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_face",
+   "args": {
+    "type": "EDGE"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_more": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_less": {
+   "group": "mesh_select",
+   "setup": "grid_edit_face_grown",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_random": {
+   "group": "mesh_select",
+   "setup": "grid_edit_none",
+   "args": {
+    "ratio": 0.3,
+    "seed": 1
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_nth": {
+   "group": "mesh_select",
+   "setup": "grid_edit",
+   "args": {
+    "skip": 1
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_linked": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_non_manifold": {
+   "group": "mesh_select",
+   "setup": "grid_edit_none",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_face_by_sides": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_tris_none",
+   "args": {
+    "number": 3,
+    "type": "EQUAL"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.select_similar": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_face_mode",
+   "args": {
+    "type": "FACE_SIDES"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.edges_select_sharp": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_none",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.region_to_loop": {
+   "group": "mesh_select",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.faces_select_linked_flat": {
+   "group": "mesh_select",
+   "setup": "grid_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.extrude_region_move": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.extrude_region_shrink_fatten": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "TRANSFORM_OT_shrink_fatten": {
+     "value": 0.5
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.extrude_faces_move": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {
+    "TRANSFORM_OT_shrink_fatten": {
+     "value": 0.3
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.extrude_vertices_move": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_vert",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.extrude_repeat": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "steps": 3
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.inset": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "thickness": 0.2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.bevel": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {
+    "offset": 0.1,
+    "segments": 2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.subdivide": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {
+    "number_cuts": 2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.unsubdivide": {
+   "group": "mesh_model",
+   "setup": "grid_edit_subdivided",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.bridge_edge_loops": {
+   "group": "mesh_model",
+   "setup": "two_loops_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.fill": {
+   "group": "mesh_model",
+   "setup": "circle_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.fill_grid": {
+   "group": "mesh_model",
+   "setup": "circle_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.fill_holes": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_hole",
+   "args": {
+    "sides": 0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.edge_face_add": {
+   "group": "mesh_model",
+   "setup": "circle_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.spin": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "steps": 6,
+    "angle": 1.5708,
+    "center": [
+     0.0,
+     3.0,
+     0.0
+    ],
+    "axis": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.poke": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.bisect": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {
+    "plane_co": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "plane_no": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.solidify": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "thickness": 0.1
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.wireframe": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {
+    "thickness": 0.05
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.symmetrize": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_asym",
+   "args": {
+    "direction": "NEGATIVE_X"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.symmetry_snap": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_asym",
+   "args": {
+    "threshold": 0.5
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.convex_hull": {
+   "group": "mesh_model",
+   "setup": "monkey_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.intersect_boolean": {
+   "group": "mesh_model",
+   "setup": "two_boxes_edit",
+   "args": {
+    "operation": "UNION"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.intersect": {
+   "group": "mesh_model",
+   "setup": "two_boxes_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.duplicate_move": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.separate": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {
+    "type": "SELECTED"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.split": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.edge_split": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.vert_connect_path": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_two_verts",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.vert_connect": {
+   "group": "mesh_model",
+   "setup": "mesh_edit_two_verts",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "bai.loopcut": {
+   "group": "mesh_model",
+   "setup": "mesh_edit",
+   "args": {
+    "cuts": 1,
+    "axis": "Z"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.delete": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit_face",
+   "args": {
+    "type": "FACE"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.dissolve_verts": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit_vert",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.dissolve_edges": {
+   "group": "mesh_cleanup",
+   "setup": "grid_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.dissolve_faces": {
+   "group": "mesh_cleanup",
+   "setup": "grid_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.dissolve_limited": {
+   "group": "mesh_cleanup",
+   "setup": "grid_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.remove_doubles": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit_doubles",
+   "args": {
+    "threshold": 0.0001
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.merge": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit_face",
+   "args": {
+    "type": "CENTER"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.edge_collapse": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.decimate": {
+   "group": "mesh_cleanup",
+   "setup": "monkey_edit",
+   "args": {
+    "ratio": 0.5
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.quads_convert_to_tris": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.tris_convert_to_quads": {
+   "group": "mesh_cleanup",
+   "setup": "mesh_edit_tris",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.flip_normals": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.normals_make_consistent": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit_flipped",
+   "args": {
+    "inside": false
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.faces_shade_smooth": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.faces_shade_flat": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit_smooth",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.mark_sharp": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.mark_seam": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit_face",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.hide": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit_face",
+   "args": {
+    "unselected": false
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.reveal": {
+   "group": "mesh_normals",
+   "setup": "mesh_edit_hidden",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.vertices_smooth": {
+   "group": "mesh_deform",
+   "setup": "monkey_edit",
+   "args": {
+    "factor": 0.5,
+    "repeat": 5
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.vertices_smooth_laplacian": {
+   "group": "mesh_deform",
+   "setup": "monkey_edit",
+   "args": {
+    "repeat": 3
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "mesh.face_make_planar": {
+   "group": "mesh_deform",
+   "setup": "monkey_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.tosphere": {
+   "group": "mesh_deform",
+   "setup": "monkey_edit",
+   "args": {
+    "value": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.shrink_fatten": {
+   "group": "mesh_deform",
+   "setup": "mesh_edit",
+   "args": {
+    "value": 0.2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.push_pull": {
+   "group": "mesh_deform",
+   "setup": "mesh_edit",
+   "args": {
+    "value": 0.2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.vertex_random": {
+   "group": "mesh_deform",
+   "setup": "mesh_edit",
+   "args": {
+    "offset": 0.1
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.edge_crease": {
+   "group": "mesh_deform",
+   "setup": "mesh_edit",
+   "args": {
+    "value": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "transform.edge_bevelweight": {
+   "group": "mesh_deform",
+   "setup": "mesh_edit",
+   "args": {
+    "value": 1.0
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.unwrap": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.smart_project": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.cube_project": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.cylinder_project": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {
+    "direction": "ALIGN_TO_OBJECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.sphere_project": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {
+    "direction": "ALIGN_TO_OBJECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.lightmap_pack": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.pack_islands": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.average_islands_scale": {
+   "group": "uv",
+   "setup": "mesh_edit_uv_uneven",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.reset": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.follow_active_quads": {
+   "group": "uv",
+   "setup": "mesh_edit_all_active",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "uv.seams_from_islands": {
+   "group": "uv",
+   "setup": "mesh_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "bai.keyframe": {
+   "group": "animation",
+   "setup": "object",
+   "args": {
+    "object": "Cube",
+    "property": "location"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "bai.frame": {
+   "group": "animation",
+   "setup": "object",
+   "args": {
+    "frame": 50
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "screen.frame_jump": {
+   "group": "animation",
+   "setup": "object",
+   "args": {
+    "end": true
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "screen.frame_offset": {
+   "group": "animation",
+   "setup": "object",
+   "args": {
+    "delta": 10
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "screen.keyframe_jump": {
+   "group": "animation",
+   "setup": "object_keyed",
+   "args": {
+    "next": true
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.extrude_move": {
+   "group": "rigging",
+   "setup": "armature_edit_tip",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.subdivide": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {
+    "number_cuts": 2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.duplicate_move": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      1.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.delete": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.bone_primitive_add": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {
+    "name": "Tail"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.switch_direction": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.select_all": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {
+    "action": "DESELECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "armature.calculate_roll": {
+   "group": "rigging",
+   "setup": "armature_edit",
+   "args": {
+    "type": "GLOBAL_POS_X"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "pose.loc_clear": {
+   "group": "rigging",
+   "setup": "pose",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "pose.rot_clear": {
+   "group": "rigging",
+   "setup": "pose",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "pose.scale_clear": {
+   "group": "rigging",
+   "setup": "pose",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "pose.transforms_clear": {
+   "group": "rigging",
+   "setup": "pose",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "pose.select_all": {
+   "group": "rigging",
+   "setup": "pose",
+   "args": {
+    "action": "DESELECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.cyclic_toggle": {
+   "group": "curves",
+   "setup": "curve_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.subdivide": {
+   "group": "curves",
+   "setup": "curve_edit",
+   "args": {
+    "number_cuts": 2
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.switch_direction": {
+   "group": "curves",
+   "setup": "curve_edit",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.handle_type_set": {
+   "group": "curves",
+   "setup": "curve_edit",
+   "args": {
+    "type": "VECTOR"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.extrude_move": {
+   "group": "curves",
+   "setup": "curve_edit_end",
+   "args": {
+    "TRANSFORM_OT_translate": {
+     "value": [
+      1.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.select_all": {
+   "group": "curves",
+   "setup": "curve_edit",
+   "args": {
+    "action": "DESELECT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.smooth": {
+   "group": "curves",
+   "setup": "curve_edit_dense",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.spline_type_set": {
+   "group": "curves",
+   "setup": "curve_edit",
+   "args": {
+    "type": "POLY"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "curve.delete": {
+   "group": "curves",
+   "setup": "curve_edit_end",
+   "args": {
+    "type": "VERT"
+   },
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "sculpt.dynamic_topology_toggle": {
+   "group": "sculpt",
+   "setup": "monkey_sculpt",
+   "args": {},
+   "verify": "harness",
+   "status": "ok",
+   "error": null
+  },
+  "sculpt.symmetrize": {
+   "group": "sculpt",
+   "setup": "monkey_sculpt_asym",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "paint.mask_flood_fill": {
+   "group": "sculpt",
+   "setup": "monkey_sculpt",
+   "args": {
+    "mode": "VALUE",
+    "value": 1.0
+   },
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "sculpt.face_sets_init": {
+   "group": "sculpt",
+   "setup": "monkey_sculpt",
+   "args": {
+    "mode": "LOOSE_PARTS"
+   },
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.view_axis": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {
+    "type": "TOP"
+   },
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.view_all": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.view_selected": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.view_camera": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.view_persportho": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.toggle_xray": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.toggle_shading": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {
+    "type": "WIREFRAME"
+   },
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.localview": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.snap_cursor_to_selected": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.snap_cursor_to_center": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.snap_cursor_to_active": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.snap_selected_to_cursor": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.snap_selected_to_grid": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.snap_selected_to_active": {
+   "group": "viewport",
+   "setup": "object_two",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.camera_to_view": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.camera_to_view_selected": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "view3d.object_as_camera": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "object.hide_view_clear": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "ed.undo": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "ed.redo": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "screen.animation_play": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "screen.animation_cancel": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "screen.screen_full_area": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "render.render": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "render.opengl": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  },
+  "wm.save_mainfile": {
+   "group": "viewport",
+   "setup": "object",
+   "args": {},
+   "verify": "viewport",
+   "status": "viewport",
+   "error": null
+  }
+ },
+ "counts": {
+  "ok": 211,
+  "viewport": 30
+ }
+}

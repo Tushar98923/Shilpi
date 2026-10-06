@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------------------
+# Private working notes (kept locally, never published)
+# ---------------------------------------------------------------------------
+CHANGELOG.md
+CLAUDE.md
+TODO.md
+Blender AI Assistant — Fine-Tuning Plan.md
+docs/phase*_blog_notes.md
+docs/phase*_blog_post.md
+.claude/
+
+# ---------------------------------------------------------------------------
+# Secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# ---------------------------------------------------------------------------
+# Models and downloads (published separately: Hugging Face / GitHub Releases)
+# ---------------------------------------------------------------------------
+models/
+*.gguf
+*.safetensors
+*.bin
+*.part
+
+# ---------------------------------------------------------------------------
+# Generated data and run output (large, regenerable)
+# ---------------------------------------------------------------------------
+domains/*/data/
+domains/*/tasks/generated_tasks.jsonl
+domains/*/tasks/llm_generated_tasks.jsonl
+*.log
+
+# ---------------------------------------------------------------------------
+# Built add-on (regenerate with: python scripts/build_addon.py)
+# ---------------------------------------------------------------------------
+addon/shilpi/vendor/
+addon/*.zip
+
+# ---------------------------------------------------------------------------
+# Blender temp files
+# ---------------------------------------------------------------------------
+*.blend1
+*.blend2
+*.crash.txt
+
+# ---------------------------------------------------------------------------
+# OS and editors
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~

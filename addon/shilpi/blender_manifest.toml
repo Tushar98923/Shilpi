@@ -1,0 +1,17 @@
+schema_version = "1.0.0"
+
+id = "shilpi"
+version = "0.1.0"
+name = "Shilpi"
+tagline = "AI assistant for Blender: type or say a command"
+maintainer = "Tushar"
+type = "add-on"
+tags = ["3D View", "User Interface"]
+blender_version_min = "5.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+platforms = ["windows-x64", "macos-arm64", "macos-x64", "linux-x64"]
+
+[permissions]
+network = "Downloads llama.cpp and the model, talks to local servers"
+files = "Stores the model and llama.cpp in the add-on folder"
+microphone = "Records spoken commands, transcribed on this computer"
