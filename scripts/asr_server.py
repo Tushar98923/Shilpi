@@ -1,7 +1,7 @@
 """Local speech-to-text server for the Blender add-on's mic button.
 
 Records from the default microphone, stops by itself after a pause, and transcribes with Whisper
-(faster-whisper, base.en int8 by default: ~75 MB, runs on the CPU so the GPU stays free for the operator
+(faster-whisper, base.en by default: ~145 MB, runs on the CPU so the GPU stays free for the operator
 model). The add-on polls it over HTTP on 127.0.0.1, so Blender never blocks and needs no audio libraries.
 
     POST /listen   start recording (stops on its own after ~0.8 s of silence, or after 12 s)
@@ -146,7 +146,7 @@ def make_handler(recorder):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="base.en", help="tiny.en (~40 MB), base.en (~75 MB), small.en (~250 MB)")
+    ap.add_argument("--model", default="base.en", help="tiny.en (~76 MB), base.en (~145 MB), small.en (~484 MB)")
     ap.add_argument("--port", type=int, default=8081)
     ap.add_argument("--threshold", type=float, default=0.012, help="mic level that counts as speech")
     ap.add_argument("--test", type=float, help="record this many seconds, print the transcript, exit")

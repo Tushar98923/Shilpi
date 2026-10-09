@@ -20,6 +20,15 @@ itself.
 **Base model:** [Qwen3.5-2B](https://huggingface.co/Qwen/Qwen3.5-2B) by the Qwen team, licensed under Apache 2.0.
 This fine-tuned model is also released under Apache 2.0.
 
+## Files
+
+| File | What it is |
+|---|---|
+| `shilpi-operator-v5-lora-f16.gguf` (67 MB) | The LoRA adapter on its own. Load it on top of [unsloth/Qwen3.5-2B-GGUF](https://huggingface.co/unsloth/Qwen3.5-2B-GGUF) `Qwen3.5-2B-Q8_0.gguf`: `llama-server -m Qwen3.5-2B-Q8_0.gguf --lora shilpi-operator-v5-lora-f16.gguf`. This is what the add-on downloads. |
+| `shilpi-operator-v5-q8_0.gguf` (2.1 GB) | The same model with the adapter merged in: one file, no `--lora` needed. |
+
+Both give the same answers (identical on all 361 broad-test commands).
+
 ## Results
 
 Held-out test set: 196 commands not seen in training. Each answer is run in Blender 5.2.1 and checked against the

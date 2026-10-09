@@ -105,13 +105,16 @@ You need Blender 5.2 or newer. The add-on supports Windows, macOS (Apple Silicon
    **Install from Disk**, and pick the zip.
 3. In the 3D Viewport, press **N** and open the **Shilpi** tab.
 4. Click **Set up**. The add-on uses llama.cpp if it is already installed, and otherwise downloads it (about
-   30 MB). It then downloads the model weights (about 2.1 GB) from
-   [Hugging Face](https://huggingface.co/Tushar98923/shilpi-operator-GGUF). A progress bar shows the download;
-   if it is interrupted, clicking **Set up** again continues where it stopped.
+   30 MB). It then downloads the model: the Qwen3.5-2B base model (about 2 GB, from
+   [unsloth/Qwen3.5-2B-GGUF](https://huggingface.co/unsloth/Qwen3.5-2B-GGUF)) and Shilpi's adapter (about 67 MB,
+   from [Hugging Face](https://huggingface.co/Tushar98923/shilpi-operator-GGUF)). A progress bar shows the
+   download; if it is interrupted, clicking **Set up** again continues where it stopped. Each file is checked
+   after downloading, and a damaged one is downloaded again.
    <!-- TODO: confirm the Hugging Face repository is public -->
 
-**Manual model download:** download the `.gguf` file from Hugging Face yourself, then set **Model file** under
-**Advanced** in the add-on's preferences. Setup then skips the download.
+**Manual model download:** download `shilpi-operator-v5-q8_0.gguf` (the base model and adapter merged into one
+file) from [Hugging Face](https://huggingface.co/Tushar98923/shilpi-operator-GGUF) yourself, then set
+**Model file** under **Advanced** in the add-on's preferences. Setup then skips the download.
 
 **Voice (optional):** click **Install voice** in the Shilpi tab. It installs the speech-recognition packages
 and downloads a small Whisper model (about 230 MB together). Speech recognition runs on the CPU, so the GPU

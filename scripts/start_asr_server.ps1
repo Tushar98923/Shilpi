@@ -1,7 +1,7 @@
-# Starts the local speech-to-text server for the add-on's mic button (Whisper base.en, CPU, ~75 MB).
+# Starts the local speech-to-text server for the add-on's mic button (Whisper base.en, CPU, ~145 MB).
 #
 # Usage:   .\scripts\start_asr_server.ps1
-#          .\scripts\start_asr_server.ps1 -Model small.en      # more accurate, ~250 MB, slower
+#          .\scripts\start_asr_server.ps1 -Model small.en      # more accurate, ~484 MB, slower
 #
 # First time only:  py -3.12 -m venv .venv-asr; .venv-asr\Scripts\python -m pip install faster-whisper sounddevice
 param(

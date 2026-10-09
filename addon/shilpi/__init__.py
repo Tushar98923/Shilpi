@@ -118,7 +118,8 @@ def _view3d_override():
 class _DefaultPrefs:
     server_url, constrained, learn = "http://127.0.0.1:8080/v1", True, True
     asr_url, voice_auto_run = "http://127.0.0.1:8081", True
-    auto_start, model_path, llama_path, model_url, voice_in_terminal = True, "", "", runtime.MODEL_URL, False
+    auto_start, model_path, llama_path, voice_in_terminal = True, "", "", False
+    base_url, adapter_url = runtime.BASE_URL, runtime.ADAPTER_URL
 
 
 def _prefs(context):
@@ -140,10 +141,12 @@ class BAI_Preferences(bpy.types.AddonPreferences):
     learn: bpy.props.BoolProperty(name="Learn from my corrections", default=True,
                                   description="Ctrl+Z after an AI command, then doing it yourself, teaches it (stored locally)")
     model_path: bpy.props.StringProperty(name="Model file", subtype="FILE_PATH", default="",
-                                         description="Use this GGUF instead of the downloaded model (leave empty normally)")
+                                         description="Use this complete GGUF instead of the downloaded base model and adapter "
+                                                     "(leave empty normally)")
     llama_path: bpy.props.StringProperty(name="llama-server", subtype="FILE_PATH", default="",
                                          description="Use this llama-server program (leave empty: found or installed automatically)")
-    model_url: bpy.props.StringProperty(name="Model download URL", default=runtime.MODEL_URL)
+    base_url: bpy.props.StringProperty(name="Base model download URL", default=runtime.BASE_URL)
+    adapter_url: bpy.props.StringProperty(name="Adapter download URL", default=runtime.ADAPTER_URL)
     server_url: bpy.props.StringProperty(name="Model server URL", default="http://127.0.0.1:8080/v1")
     asr_url: bpy.props.StringProperty(name="Speech server URL", default="http://127.0.0.1:8081")
     voice_in_terminal: bpy.props.BoolProperty(
@@ -159,7 +162,7 @@ class BAI_Preferences(bpy.types.AddonPreferences):
             layout.prop(self, "voice_in_terminal")
         box = layout.box()
         box.label(text="Advanced (leave as they are normally)")
-        for name in ("model_path", "llama_path", "model_url", "server_url", "asr_url"):
+        for name in ("model_path", "llama_path", "base_url", "adapter_url", "server_url", "asr_url"):
             box.prop(self, name)
         box.label(text=f"Downloads and logs: {runtime.data_dir()}")
 
@@ -225,7 +228,7 @@ def setup_state(prefs) -> dict:
     """What is installed and running (recomputed at most every 2 s; the panel draws often)."""
     if time.time() - _SETUP["time"] > 2:
         _SETUP.update(time=time.time(), llama=runtime.find_llama_server(prefs.llama_path) is not None,
-                      model=runtime.model_path(prefs.model_path).is_file(), voice=runtime.voice_installed(),
+                      model=runtime.model_ready(prefs.model_path), voice=runtime.voice_installed(),
                       llm_up=runtime.healthy(_health_url(prefs.server_url), 0.2),
                       voice_up=runtime.healthy(_health_url(prefs.asr_url), 0.2))
     return _SETUP
@@ -256,9 +259,7 @@ class BAI_OT_setup(bpy.types.Operator):
         else:
             if not runtime.find_llama_server(prefs.llama_path):
                 steps.append(runtime.install_llama)
-            model = runtime.model_path(prefs.model_path)
-            if not model.is_file():
-                steps.append(lambda job: runtime.download(prefs.model_url, model, job, "Downloading the model"))
+            steps += runtime.model_downloads(prefs)
         if not steps:
             context.window_manager.bai.last_status = "Everything is already set up."
             return {"FINISHED"}

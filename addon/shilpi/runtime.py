@@ -2,7 +2,7 @@
 
 Everything the add-on downloads goes into its own user folder (kept across add-on updates):
     llama/<build>/        llama.cpp release (llama-server + libraries), only if none is installed already
-    models/<file>.gguf    the operator model
+    models/<file>.gguf    the base model and Shilpi's adapter
     voice/packages/       faster-whisper + sounddevice, installed with Blender's own pip
     voice/whisper/        the Whisper model (downloaded by Install voice)
     logs/                 server logs, for when something goes wrong
@@ -30,9 +30,21 @@ import bpy
 # llama.cpp build the operator model was tested with (newer builds renamed settings before; pinning avoids surprises)
 LLAMA_BUILD = "b11193"
 LLAMA_URL = "https://github.com/ggml-org/llama.cpp/releases/download/{build}/llama-{build}-bin-{asset}"
-MODEL_FILE = "shilpi-operator-v5-q8_0.gguf"
-MODEL_URL = f"https://huggingface.co/Tushar98923/shilpi-operator-GGUF/resolve/main/{MODEL_FILE}"
-MODEL_SIZE_GB = 2.1
+# The model is the stock Qwen3.5-2B (Apache 2.0) plus Shilpi's LoRA adapter, which llama-server applies at load
+# time. Later specialists add their own small adapters to the same base instead of another full model each.
+# The base is pinned to the exact upload the adapter was tested on.
+BASE_FILE = "Qwen3.5-2B-Q8_0.gguf"
+BASE_URL = ("https://huggingface.co/unsloth/Qwen3.5-2B-GGUF/resolve/f6d5376be1edb4d416d56da11e5397a961aca8ae/"
+            + BASE_FILE)
+ADAPTER_FILE = "shilpi-operator-v5-lora-f16.gguf"
+ADAPTER_URL = f"https://huggingface.co/Tushar98923/shilpi-operator-GGUF/resolve/main/{ADAPTER_FILE}"
+MODEL_SIZE_GB = 2.1  # base 2.01 GB + adapter 0.07 GB
+# Downloads from these URLs must match these hashes (a custom URL in the preferences isn't checked).
+KNOWN_SHA256 = {BASE_URL: "1b04acba824817554f4ce23639bc8495ff70453b8fcb047900c731521021f2c1",
+                ADAPTER_URL: "99c9286ae6657d3acb49a3f72156d556c7873c5b6470493305ab2cc63a6b67ce"}
+# Add-on 0.1.0 downloaded the operator merged into one file. If that's there, it's used as it is (same answers),
+# so nobody downloads 2 GB again.
+MERGED_FILE = "shilpi-operator-v5-q8_0.gguf"
 VOICE_PACKAGES = ["faster-whisper==1.2.1", "sounddevice==0.5.6"]
 WHISPER_MODEL = "base.en"  # ~145 MB, CPU; small next to the operator model, which gets the GPU
 WHISPER_URL = "https://huggingface.co/Systran/faster-whisper-base.en/resolve/main/{file}"
@@ -137,10 +149,30 @@ def install_llama(job) -> Path:
 
 # ----------------------------------------------------------------------------------------------- model
 
-def model_path(custom: str = "") -> Path:
+def model_files(custom: str = "") -> tuple[Path, Path | None]:
+    """(model, adapter) for llama-server; adapter is None when the model file is complete on its own."""
     if custom:
-        return Path(bpy.path.abspath(custom))
-    return data_dir() / "models" / MODEL_FILE
+        return Path(bpy.path.abspath(custom)), None
+    folder = data_dir() / "models"
+    base, adapter, merged = folder / BASE_FILE, folder / ADAPTER_FILE, folder / MERGED_FILE
+    if merged.is_file() and not (base.is_file() and adapter.is_file()):
+        return merged, None
+    return base, adapter
+
+
+def model_ready(custom: str = "") -> bool:
+    model, adapter = model_files(custom)
+    return model.is_file() and (adapter is None or adapter.is_file())
+
+
+def model_downloads(prefs) -> list:
+    """Setup steps for the model files that are missing."""
+    model, adapter = model_files(prefs.model_path)
+    if adapter is None:  # a custom or 0.1.0 model: nothing to download
+        return []
+    wanted = [(prefs.base_url, model, "Downloading the base model"),
+              (prefs.adapter_url, adapter, "Downloading Shilpi's adapter")]
+    return [lambda job, u=url, d=dest, l=label: download(u, d, job, l) for url, dest, label in wanted if not dest.is_file()]
 
 
 def download(url: str, dest: Path, job, label: str, attempts: int = 5) -> None:
@@ -165,6 +197,7 @@ def _download_once(url: str, dest: Path, job, label: str) -> None:
         response = urllib.request.urlopen(request, timeout=30)
     except urllib.error.HTTPError as e:
         if e.code == 416 and have:  # already complete
+            _check_hash(url, part, job, label)
             part.replace(dest)
             return
         if e.code == 404:
@@ -188,7 +221,24 @@ def _download_once(url: str, dest: Path, job, label: str) -> None:
                            f"{label}: {done / 1e6:,.0f} MB", progress=done / total if total else None)
     if total and part.stat().st_size != total:
         raise ConnectionError(f"download incomplete ({part.stat().st_size:,} of {total:,} bytes)")  # retried, resuming
+    _check_hash(url, part, job, label)  # before the final name, so an unchecked file never looks finished
     part.replace(dest)
+
+
+def _check_hash(url: str, part: Path, job, label: str) -> None:
+    """A known file whose bytes don't match is deleted, so the next Set up downloads it again from the start."""
+    expected = KNOWN_SHA256.get(url)
+    if not expected:
+        return
+    import hashlib
+    job.update(step=f"{label}: checking the file", progress=None)
+    digest = hashlib.sha256()
+    with open(part, "rb") as f:
+        while chunk := f.read(1 << 22):
+            digest.update(chunk)
+    if digest.hexdigest() != expected:
+        part.unlink(missing_ok=True)
+        raise RuntimeError(f"{label}: the downloaded file is damaged. Press Set up to download it again.")
 
 
 # ----------------------------------------------------------------------------------------------- voice
@@ -380,16 +430,17 @@ def port_of(url: str, default: int) -> int:
 
 def start_llm(prefs) -> str | None:
     """Start llama-server with the operator model. Returns an error message, or None."""
-    exe, model = find_llama_server(prefs.llama_path), model_path(prefs.model_path)
+    exe, (model, adapter) = find_llama_server(prefs.llama_path), model_files(prefs.model_path)
     if not exe:
         return "llama.cpp isn't installed: press Set up"
-    if not model.is_file():
-        return f"Model not found ({model.name}): press Set up"
+    for path in (model, adapter):
+        if path is not None and not path.is_file():
+            return f"Model not found ({path.name}): press Set up"
     env = {**os.environ, "LLAMA_ARG_CHAT_TEMPLATE_KWARGS": '{"enable_thinking": false}',  # trained without thinking
            "LLAMA_ARG_REASONING": "off"}
     port = port_of(prefs.server_url, 8080)
-    LLM.start([str(exe), "-m", str(model), "--host", "127.0.0.1", "--port", str(port), "--jinja",
-               "-ngl", "99", "-c", "2048"], env=env)
+    LLM.start([str(exe), "-m", str(model), *(["--lora", str(adapter)] if adapter else []), "--host", "127.0.0.1",
+               "--port", str(port), "--jinja", "-ngl", "99", "-c", "2048"], env=env)
     return None
 
 
